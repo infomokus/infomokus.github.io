@@ -1,0 +1,34 @@
+tr:nth-child(even) {
+    background-color: #c2c2c2;
+}
+
+ul {
+    color: #cebf1d
+}
+
+h1 {
+    color: #ff0000;
+    font-family: "newstyle";
+}
+
+img {
+    width: 400px;
+    margin: 20px;
+}
+
+@font-face {
+    font-family: "Newstyle";
+    src: url(/infomokus.github.io/css/fonts/Oswald-Medium.ttf);
+}
+
+h2 {
+    font-family: 'Smooch', cursive;
+    font-weight: 100;
+    color: blue;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+
+#fajtaElem{
+    color: rgb(255, 217, 0);
+}
