@@ -1,19 +1,52 @@
+h1 {
+    color: #ff0000;
+    font-family: "newstyle";
+    padding-top: 30px;
+}
+
+h2 {
+    font-weight: bold;
+    color: blue;
+}
+
+img {
+    width: 14%;
+    margin: 5%;
+    box-shadow: 5px 5px 10px black;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
 tr:nth-child(even) {
     background-color: #c2c2c2;
 }
 
-ul {
-    color: #cebf1d
+.content {
+    color: #cebf1d;
+    font-size: 18px;
+    margin: 0px;
 }
 
-h1 {
-    color: #ff0000;
-    font-family: "newstyle";
+.div {
+    display: inline-block;
 }
 
-img {
-    width: 400px;
-    margin: 20px;
+.fajtaElem {
+    color: rgb(255, 217, 0);
+}
+
+.img-div {
+    background-color: rgb(205, 235, 235);
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.spanyol {
+    text-transform: uppercase;
 }
 
 @font-face {
@@ -21,14 +54,47 @@ img {
     src: url(/infomokus.github.io/css/fonts/Oswald-Medium.ttf);
 }
 
-h2 {
-    font-family: 'Smooch', cursive;
-    font-weight: 100;
-    color: blue;
+#about_table {
+    min-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+#htmlheadpozi {
+    position: fixed;
+    background-color:rgb(199, 246, 246);
+    min-width: 100%;
+    margin: 0px;
+}
 
-#fajtaElem{
-    color: rgb(255, 217, 0);
+#htmlheadpozi li{
+    display: inline;
+}
+
+#img-1 {
+    visibility: hidden;
+}
+
+body{background-color: #f0f0f0}
+
+.login-div{padding: 15px;
+          border: solid 1px #c0c0c0;
+          box-shadow: 5px 5px 10px;
+          display: inline-block}
+
+.login-div input{
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*body div.login-div div
+  body div div
+  body div
+  body
+  akár az előzőeket is odaírhatnám az "input" elé*/
+ input.form-control[type=email]{
+    background: cyan;
+    padding: 5px;
+    box-shadow: 5px 5px 10px gray;
 }
