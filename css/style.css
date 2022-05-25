@@ -51,7 +51,7 @@ tr:nth-child(even) {
 
 @font-face {
     font-family: "Newstyle";
-    src: url(/infomokus.github.io/css/fonts/Oswald-Medium.ttf);
+    src: url(./fonts/Oswald-Medium.ttf);
 }
 
 #about_table {
