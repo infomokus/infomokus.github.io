@@ -15,11 +15,14 @@ img {
     box-shadow: 5px 5px 10px black;
 }
 
-table, th, td{
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
+
 tr:nth-child(even) {
     background-color: #c2c2c2;
 }
@@ -58,17 +61,17 @@ tr:nth-child(even) {
     min-width: 40%;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 #htmlheadpozi {
     position: fixed;
-    background-color:rgb(199, 246, 246);
+    background-color: rgb(199, 246, 246);
     min-width: 100%;
     margin: 0px;
 }
 
-#htmlheadpozi li{
+#htmlheadpozi li {
     display: inline;
 }
 
@@ -76,25 +79,82 @@ tr:nth-child(even) {
     visibility: hidden;
 }
 
-body{background-color: #f0f0f0}
+body {
+    background-color: #f0f0f0
+}
 
-.login-div{padding: 15px;
-          border: solid 1px #c0c0c0;
-          box-shadow: 5px 5px 10px;
-          display: inline-block}
+.login-div {
+    display: inline-block;
+    border: solid 1px #c0c0c0;
+    padding: 15px;
+    box-shadow: 2px 2px 5px #c0c0c0;
 
-.login-div input{
+}
+
+.login-div input {
     display: block;
     margin-bottom: 10px;
 }
 
-/*body div.login-div div
+/*
+body div.login-div div
   body div div
   body div
   body
-  akár az előzőeket is odaírhatnám az "input" elé*/
- input.form-control[type=email]{
+  .login-div
+  akár az előzőeket is odaírhatnám az "input" elé
+  vagy akár csak .login-div input[type="email"]
+  */
+input.form-control[type="email"] {
     background: cyan;
-    padding: 5px;
-    box-shadow: 5px 5px 10px gray;
+}
+
+.login-div input {
+    border: solid blue 1px;
+}
+
+[type="password"] {
+    background: cyan;
+}
+
+.submit-btn:hover {
+    box-shadow: 2px 2px 3px #c0c0c0;
+}
+
+ul li:last-child {
+    text-decoration: underline;
+}
+
+ul li:first-child {
+    color: red;
+}
+
+ul li:nth-child(2) {
+    color: #0062ff;
+}
+
+.form-div {
+    display: table;
+    margin-top: 30px;
+    border: solid 1px #c0c0c0;
+    padding: 15px;
+    box-shadow: 2px 2px 5px #c0c0c0;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group input {
+    display: block;
+    margin: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 20px;
+}
+
+.form-group:hover {
+    border: solid 1px #c0c0c0;
+    box-shadow: 2px 2px 10px #c0c0c0;
 }

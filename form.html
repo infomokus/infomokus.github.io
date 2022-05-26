@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <a href="./index.html">Vissza a főoldalra.</a>
+    <form class="form-div">
+        <div class="form-group">
+            <label for="name">Név:*</label>
+            <input id="name" type="text" placeholder="Kábel Feszület" value="kitöltendő" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Ímél:*</label>
+            <input id="email" type="email" placeholder="valami@valami.com" required>
+        </div>
+        <div class="form-group">
+            <label for="szulido">Születési idő:*</label>
+            <input id="szulido" type="date" required>
+        </div>
+        <div class="form-group">
+            <label for="telefon">Telefonszám:*</label>
+            <input id="telefon" type="tel" pattern:"+[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="+36-30-123-45-67"
+                required>
+            <small>Minta: +36-30-123-45-67</small>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="megjegyzes">Megjegyzés:</label>
+            <!-- <textarea id="megjegyzes" type="comment" rows="5"> -->
+            <input id="megjegyzes" type="text">
+        </div>
+
+        <p>Neme:</p>
+        <div>
+            <input id="woman" name="sex" type="radio">
+            <label for="woman">nő</label>
+        </div>
+        <div>
+            <input id="man" name="sex" type="radio" checked>
+            <label for="man">férfi</label>
+
+        </div>
+
+        <p>Előnyös tulajdonságai:</p>
+        <div>
+            <input id="gyors" name="gyors" type="checkbox">
+            <label for="gyors">gyors</label>
+        </div>
+        <div>
+            <input id="okos" name="okos" type="checkbox">
+            <label for="okos">okos</label>
+        </div>
+        <div>
+            <input id="szép" name="szép" type="checkbox" checked>
+            <label for="szép">szép</label>
+        </div>
+    </form>
+</body>
+
+</html>
