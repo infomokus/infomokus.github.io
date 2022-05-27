@@ -154,7 +154,3 @@ input[type="checkbox"] {
     margin-left: 20px;
 }
 
-.form-group:hover {
-    border: solid 1px #c0c0c0;
-    box-shadow: 2px 2px 10px #c0c0c0;
-}
