@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 
-<body>
+<body onload="betoltes()">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="./bs.html">Bootstrap</a>
@@ -45,8 +45,25 @@
     </div>
   </nav>
 
-
   <div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div>
+          <select></select>
+          <button type="button" class="btn btn-info" onclick="szamol()">Válts erre a napra </button>
+        </div>
+        <div> Ma <span id="mainap">
+          </span> van.</div>
+      </div>
+      <div class="col-2">
+        Ma <span id="homerseklet">kkk
+        </span> &deg;C fok van.
+      </div>
+    </div>
+  </div>
+
+<!--   <div class="container">
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8">
@@ -63,7 +80,7 @@
       </div>
       <div class="col-2"></div>
     </div>
-  </div>
+  </div> -->
 
 
   <div class="container">
