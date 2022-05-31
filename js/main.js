@@ -43,9 +43,9 @@ function betoltes() {
 
 
 // let napok = ["vasárnap","hétfő", "kedd", "szerda", "csutortok", "pentek", "szombat"]
-let selectBox = document.querySelector("select");
+let selectBox = document.getElementById("daycombo");
 for (let i = 0; i < napok.length; i++) {
-    selectBox.options.add(new Option(napok[i][1]))
+    selectBox.options.add(new Option(napok[i][1], napok[i][0]))
 }
 
 let d = new Date();
@@ -56,7 +56,6 @@ let homersekletek = [11, 13, 15, 17, 19, 21, 23];
 document.querySelector('span#homerseklet').innerHTML = homersekletek[d.getDay()];
 
 function szamol(){
-console.log("szamolok")
-document.querySelector('span#homerseklet').innerHTML = "listelemnek megfelelő c";
+document.querySelector('span#homerseklet').innerHTML = homersekletek[selectBox.value];
 };
 
