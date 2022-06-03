@@ -1,3 +1,6 @@
+//Key of users.
+let keys = ["id", "name", "email"];
+
 //Get dada from server
 function getServerData(url) {
     let fetchOptions = {
@@ -29,15 +32,25 @@ function fillDataTable(data, tableID) {
     }
 
     //addnew user row
-    let newRow = newUserRow(data[0]);
-    table.appendChild(newRow);
 
     let tBody = table.querySelector("tbody");
+    tBody.innerHTML = "";
+    let newRow = newUserRow();
+    tBody.appendChild(newRow);
+
     for (let row of data) {
         let tr = createAnyElement("tr");
-        for (let k in row) {
+        for (let k of keys) {
             let td = createAnyElement("td");
-            td.innerHTML = row[k];
+            if (k == "id") {
+                td.innerHTML = row[k];
+            } else {
+                let input = createAnyElement("input", {
+                    class: "form-contol",
+                    value: row[k]
+                });
+                td.appendChild(input);
+            }
             tr.appendChild(td);
         }
         let btnGroup = createBtnGroup();
@@ -92,7 +105,7 @@ function delRow(btn) {
 //create new user
 function newUserRow(row) {
     let tr = createAnyElement("tr");
-    for (let k in { id: "", name: "", email: "" }) {
+    for (let k of keys) {
         let td = createAnyElement("td");
         let input = createAnyElement("input", {
             class: "form-control",
@@ -116,10 +129,33 @@ function newUserRow(row) {
 
 function createUser(btn) {
     let tr = btn.parentElement.parentElement;
-    let inputs = tr.querySelectorAll("input.form-control");
-    let data = {id: "6", name: "hh", email: "k"};
-    for (let i = 0; i < inputs.lenght; i++) {
-        data[inputs[i].name] = inputs[i].value
-    }
+    let data = getRowData(tr);
     console.log(data);
+    delete data.id;
+    let fetchOptions = {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    fetch(`http://localhost:3000/users`, fetchOptions).then(
+        resp => resp.json(),
+        err => console.error(err)
+    ).then(
+        data => startGetUsers()
+    );
+
+}
+
+function getRowData(tr) {
+    let inputs = tr.querySelectorAll("input.form-control");
+    let data = {};
+    for (let i = 0; i < inputs.length; i++) {
+        data[inputs[i].name] = inputs[i].value;
+    }
+    return data;
 }

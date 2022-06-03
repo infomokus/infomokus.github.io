@@ -1,21 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Big Tom",
-      "email": "bigtom@gmail.com"
+      "name": "Péter",
+      "email": "p@gmail.com",
+      "id": 5
     },
     {
-      "id": 2,
-      "name": "Littly Jimmy",
-      "email": "littlejimmy@gmail.com"
+      "name": "kiss sandor",
+      "email": "kiss@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "7657",
+      "email": "7657",
+      "id": 11
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "userId": 1
-    }
-  ]
+  "comments": []
 }
