@@ -28,6 +28,10 @@ function fillDataTable(data, tableID) {
         return;
     }
 
+    //addnew user row
+    let newRow = newUserRow(data[0]);
+    table.appendChild(newRow);
+
     let tBody = table.querySelector("tbody");
     for (let row of data) {
         let tr = createAnyElement("tr");
@@ -83,4 +87,39 @@ function delRow(btn) {
         }
     );
 
+}
+
+//create new user
+function newUserRow(row) {
+    let tr = createAnyElement("tr");
+    for (let k in { id: "", name: "", email: "" }) {
+        let td = createAnyElement("td");
+        let input = createAnyElement("input", {
+            class: "form-control",
+            name: k
+        });
+        td.appendChild(input);
+        tr.appendChild(td);
+    }
+
+    let newBtn = createAnyElement("button", {
+        class: "btn btn-success",
+        onclick: "createUser(this)"
+    });
+    newBtn.innerHTML = '<i class="fas fa-plus"></i>'
+    let td = createAnyElement("td");
+    td.appendChild(newBtn)
+    tr.appendChild(td);
+
+    return tr;
+}
+
+function createUser(btn) {
+    let tr = btn.parentElement.parentElement;
+    let inputs = tr.querySelectorAll("input.form-control");
+    let data = {id: "6", name: "hh", email: "k"};
+    for (let i = 0; i < inputs.lenght; i++) {
+        data[inputs[i].name] = inputs[i].value
+    }
+    console.log(data);
 }
