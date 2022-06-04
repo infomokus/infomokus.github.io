@@ -42,15 +42,15 @@ function fillDataTable(data, tableID) {
         let tr = createAnyElement("tr");
         for (let k of keys) {
             let td = createAnyElement("td");
+            let input = createAnyElement("input", {
+                class: "form-contol",
+                value: row[k],
+                name: k
+            });
             if (k == "id") {
-                td.innerHTML = row[k];
-            } else {
-                let input = createAnyElement("input", {
-                    class: "form-contol",
-                    value: row[k]
-                });
-                td.appendChild(input);
+                input.setAttribute("readonly", true)
             }
+            td.appendChild(input);
             tr.appendChild(td);
         }
         let btnGroup = createBtnGroup();
@@ -69,7 +69,7 @@ function createAnyElement(name, attributes) {
 
 function createBtnGroup() {
     let group = createAnyElement("div", { class: "btn btn-group" });
-    let infoBtn = createAnyElement("button", { class: "btn btn-info", onclick: "getInfo(this)" });
+    let infoBtn = createAnyElement("button", { class: "btn btn-info", onclick: "setRow(this)" });
     infoBtn.innerHTML = '<i class="fas fa-edit"></i>';
     let delBtn = createAnyElement("button", { class: "btn btn-danger", onclick: "delRow(this)" });
     delBtn.innerHTML = '<i class="fas fa-trash"></i>';
@@ -95,9 +95,7 @@ function delRow(btn) {
         resp => resp.json(),
         err => console.error(err)
     ).then(
-        data => {
-            startGetUsers();
-        }
+        data => startGetUsers()
     );
 
 }
@@ -152,10 +150,32 @@ function createUser(btn) {
 }
 
 function getRowData(tr) {
-    let inputs = tr.querySelectorAll("input.form-control");
+    let inputs = tr.querySelectorAll("input"); //("input.form-control");
     let data = {};
     for (let i = 0; i < inputs.length; i++) {
         data[inputs[i].name] = inputs[i].value;
     }
     return data;
+}
+
+//Set data.
+function setRow(btn) {
+    let tr = btn.parentElement.parentElement.parentElement;
+    let data = getRowData(tr);
+    let fetchOptions = {
+        method: "PUT",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    fetch(`http://localhost:3000/users/${data.id}`, fetchOptions).then(
+        resp => resp.json(),
+        err => console.error(err)
+    ).then(
+        data => startGetUsers()
+        );
 }

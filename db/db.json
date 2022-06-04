@@ -1,19 +1,9 @@
 {
   "users": [
     {
-      "name": "Péter",
-      "email": "p@gmail.com",
-      "id": 5
-    },
-    {
-      "name": "kiss sandor",
-      "email": "kiss@gmail.com",
-      "id": 6
-    },
-    {
-      "name": "7657",
-      "email": "7657",
-      "id": 11
+      "id": 1,
+      "name": "kljl",
+      "email": "ooo"
     }
   ],
   "comments": []
