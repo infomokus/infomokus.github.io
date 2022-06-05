@@ -48,21 +48,39 @@
   <div class="container">
     <div class="row">
       <div class="col-2"></div>
-      <div class="col-8">
+      <div class="col-7 ">
         <div>
           <select id="daycombo"></select>
-          <button type="button" class="btn btn-info" onclick="szamol()">Válts erre a napra </button>
+          <button type="button" class="btn btn-info" onclick="btnSzamol()">Válts erre a napra </button>
         </div>
         <div> Ma <span id="mainap">
           </span> van.</div>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <span id="homerseklet">
         </span> &deg;C fok.
+        <p>
+
+          Napi ajánlat: <span id="showAjanlat"></span>
+        </p>
       </div>
     </div>
   </div>
 
+  <div class="container form-control bordered">
+    <div class="row">
+      <div class="col-4">
+        Heti minimum hőmérséklet:<span id="minimumHomerseklet"></span> &deg;C fok.
+      </div>
+      <div class="col-4">
+        Heti átlag hőmérséklet:<span id="atlagHomerseklet"></span> &deg;C fok.
+      </div>
+      <div class="col-4">
+        Heti maximum hőmérséklet:<span id="maximumHomerseklet"></span> &deg;C fok.
+      </div>
+    </div>
+  </div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-2"></div>
